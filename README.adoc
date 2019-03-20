@@ -11,7 +11,7 @@ failing method calls by using the Netflix Hystrix fault tolerance library.
 == What You Will Build
 
 You will build a microservice application that uses the
-http://martinfowler.com/bliki/CircuitBreaker.html[circuit breaker pattern] to gracefully
+https://martinfowler.com/bliki/CircuitBreaker.html[circuit breaker pattern] to gracefully
 degrade functionality when a method call fails. Use of the Circuit Breaker pattern can let
 a microservice continue operating when a related service fails, preventing the failure
 from cascading and giving the failing service time to recover.
