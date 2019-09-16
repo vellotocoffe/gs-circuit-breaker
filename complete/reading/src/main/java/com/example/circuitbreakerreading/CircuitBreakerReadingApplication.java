@@ -1,4 +1,4 @@
-package hello;
+package com.example.circuitbreakerreading;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableCircuitBreaker
 @RestController
 @SpringBootApplication
-public class ReadingApplication {
+public class CircuitBreakerReadingApplication {
 
   @Autowired
   private BookService bookService;
@@ -29,6 +29,6 @@ public class ReadingApplication {
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(ReadingApplication.class, args);
+    SpringApplication.run(CircuitBreakerReadingApplication.class, args);
   }
 }

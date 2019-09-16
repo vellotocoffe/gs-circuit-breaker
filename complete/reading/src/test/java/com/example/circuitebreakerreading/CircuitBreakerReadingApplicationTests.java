@@ -1,4 +1,4 @@
-package hello;
+package com.example.circuitbreakerreading;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ReadingApplicationTests {
+public class CircuitBreakerReadingApplicationTests {
 
     private MockRestServiceServer server;
 

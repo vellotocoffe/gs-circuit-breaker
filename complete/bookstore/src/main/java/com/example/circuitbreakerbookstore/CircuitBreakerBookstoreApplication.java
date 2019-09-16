@@ -1,4 +1,4 @@
-package hello;
+package com.example.circuitbreakerbookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @SpringBootApplication
-public class BookstoreApplication {
+public class CircuitBreakerBookstoreApplication {
 
   @RequestMapping(value = "/recommended")
   public String readingList(){
@@ -15,6 +15,6 @@ public class BookstoreApplication {
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(BookstoreApplication.class, args);
+    SpringApplication.run(CircuitBreakerBookstoreApplication.class, args);
   }
 }
