@@ -136,7 +136,7 @@ include::complete/bookstore/src/main/resources/application.properties[]
 
 == Set up a Client Microservice Application
 
-The beading application will be your consumer (modeling visitors) for the bookstore
+The reading application will be your consumer (modeling visitors) for the bookstore
 application. You can view your reading list there at `/to-read`, and that reading list is
 retrieved from the bookstore service application. The following example (from
 `reading/src/main/java/com/example/circuitbreakerreading/CircuitBreakerReadingApplication.java`)
