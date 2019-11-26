@@ -24,38 +24,38 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CircuitBreakerReadingApplicationTests {
 
-    private MockRestServiceServer server;
+	private MockRestServiceServer server;
 
-    @Autowired
-    private TestRestTemplate testRestTemplate;
+	@Autowired
+	private TestRestTemplate testRestTemplate;
 
-    @Autowired
-    private RestTemplate rest;
+	@Autowired
+	private RestTemplate rest;
 
-    @Before
-    public void setup() {
-        this.server = MockRestServiceServer.createServer(rest);
-    }
+	@Before
+	public void setup() {
+		this.server = MockRestServiceServer.createServer(rest);
+	}
 
-    @After
-    public void teardown() {
-        this.server = null;
-    }
+	@After
+	public void teardown() {
+		this.server = null;
+	}
 
-    @Test
-    public void toReadTest() {
-        this.server.expect(requestTo("http://localhost:8090/recommended"))
-                .andExpect(method(HttpMethod.GET)).
-                andRespond(withSuccess("books", MediaType.TEXT_PLAIN));
-        String books = testRestTemplate.getForObject("/to-read", String.class);
-        assertThat(books).isEqualTo("books");
-    }
+	@Test
+	public void toReadTest() {
+		this.server.expect(requestTo("http://localhost:8090/recommended"))
+				.andExpect(method(HttpMethod.GET)).
+				andRespond(withSuccess("books", MediaType.TEXT_PLAIN));
+		String books = testRestTemplate.getForObject("/to-read", String.class);
+		assertThat(books).isEqualTo("books");
+	}
 
-    @Test
-    public void toReadFailureTest() {
-        this.server.expect(requestTo("http://localhost:8090/recommended")).
-                andExpect(method(HttpMethod.GET)).andRespond(withServerError());
-        String books = testRestTemplate.getForObject("/to-read", String.class);
-        assertThat(books).isEqualTo("Cloud Native Java (O'Reilly)");
-    }
+	@Test
+	public void toReadFailureTest() {
+		this.server.expect(requestTo("http://localhost:8090/recommended")).
+				andExpect(method(HttpMethod.GET)).andRespond(withServerError());
+		String books = testRestTemplate.getForObject("/to-read", String.class);
+		assertThat(books).isEqualTo("Cloud Native Java (O'Reilly)");
+	}
 }

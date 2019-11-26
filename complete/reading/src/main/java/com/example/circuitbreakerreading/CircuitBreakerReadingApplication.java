@@ -20,15 +20,15 @@ public class CircuitBreakerReadingApplication {
 
   @Bean
   public RestTemplate rest(RestTemplateBuilder builder) {
-    return builder.build();
+	return builder.build();
   }
 
   @RequestMapping("/to-read")
   public String toRead() {
-    return bookService.readingList();
+	return bookService.readingList();
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(CircuitBreakerReadingApplication.class, args);
+	SpringApplication.run(CircuitBreakerReadingApplication.class, args);
   }
 }

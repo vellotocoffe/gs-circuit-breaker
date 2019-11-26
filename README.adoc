@@ -109,7 +109,7 @@ following listing (from
 `bookstore/src/main/java/com/example/circuitbreakerbookstore/CircuitBreakerBookstoreApplication.java`):
 
 ====
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/bookstore/src/main/java/com/example/circuitbreakerbookstore/CircuitBreakerBookstoreApplication.java[]
 ----
@@ -143,7 +143,7 @@ retrieved from the bookstore service application. The following example (from
 shows this class:
 
 ====
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/reading/src/main/java/com/example/circuitbreakerreading/CircuitBreakerReadingApplication.java[]
 ----
@@ -189,7 +189,7 @@ created. The following listing (from
 `BookService` class):
 
 ====
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/reading/src/main/java/com/example/circuitbreakerreading/BookService.java[]
 ----
@@ -206,7 +206,7 @@ the `BookService`, and call it for your reading list. The following example (fro
 shows how to do so:
 
 ====
-[source,java]
+[source,java,tabsize=2]
 ----
 include::complete/reading/src/main/java/com/example/circuitbreakerreading/CircuitBreakerReadingApplication.java[]
 ----

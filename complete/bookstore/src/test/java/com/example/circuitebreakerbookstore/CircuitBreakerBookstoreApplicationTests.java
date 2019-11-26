@@ -13,12 +13,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CircuitBreakerBookstoreApplicationTests {
 
-    @Autowired
-    private TestRestTemplate rest;
+	@Autowired
+	private TestRestTemplate rest;
 
-    @Test
-    public void recommendedTest() {
-        String resp = rest.getForObject("/recommended", String.class);
-        assertThat(resp).isEqualTo("Spring in Action (Manning), Cloud Native Java (O'Reilly), Learning Spring Boot (Packt)");
-    }
+	@Test
+	public void recommendedTest() {
+		String resp = rest.getForObject("/recommended", String.class);
+		assertThat(resp).isEqualTo("Spring in Action (Manning), Cloud Native Java (O'Reilly), Learning Spring Boot (Packt)");
+	}
 }

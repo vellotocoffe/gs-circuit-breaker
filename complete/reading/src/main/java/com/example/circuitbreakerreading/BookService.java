@@ -12,18 +12,18 @@ public class BookService {
   private final RestTemplate restTemplate;
 
   public BookService(RestTemplate rest) {
-    this.restTemplate = rest;
+	this.restTemplate = rest;
   }
 
   @HystrixCommand(fallbackMethod = "reliable")
   public String readingList() {
-    URI uri = URI.create("http://localhost:8090/recommended");
+	URI uri = URI.create("http://localhost:8090/recommended");
 
-    return this.restTemplate.getForObject(uri, String.class);
+	return this.restTemplate.getForObject(uri, String.class);
   }
 
   public String reliable() {
-    return "Cloud Native Java (O'Reilly)";
+	return "Cloud Native Java (O'Reilly)";
   }
 
 }

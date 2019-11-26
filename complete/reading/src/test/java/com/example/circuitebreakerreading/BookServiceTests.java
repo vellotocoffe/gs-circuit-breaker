@@ -17,21 +17,21 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @RestClientTest(BookService.class)
 public class BookServiceTests {
 
-    @Autowired
-    private BookService bookService;
+	@Autowired
+	private BookService bookService;
 
-    @Autowired
-    private MockRestServiceServer server;
+	@Autowired
+	private MockRestServiceServer server;
 
-    @Test
-    public void readingListTest() {
-        this.server.expect(requestTo("http://localhost:8090/recommended"))
-                .andRespond(withSuccess("books", MediaType.TEXT_PLAIN));
-        assertThat(bookService.readingList()).isEqualTo("books");
-    }
+	@Test
+	public void readingListTest() {
+		this.server.expect(requestTo("http://localhost:8090/recommended"))
+				.andRespond(withSuccess("books", MediaType.TEXT_PLAIN));
+		assertThat(bookService.readingList()).isEqualTo("books");
+	}
 
-    @Test
-    public void reliable() {
-        assertThat(bookService.reliable()).isEqualTo("Cloud Native Java (O'Reilly)");
-    }
+	@Test
+	public void reliable() {
+		assertThat(bookService.reliable()).isEqualTo("Cloud Native Java (O'Reilly)");
+	}
 }
