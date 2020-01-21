@@ -1,9 +1,10 @@
 package com.example.circuitbreakerreading;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -20,7 +21,7 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CircuitBreakerReadingApplicationTests {
 
@@ -32,12 +33,12 @@ public class CircuitBreakerReadingApplicationTests {
 	@Autowired
 	private RestTemplate rest;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		this.server = MockRestServiceServer.createServer(rest);
 	}
 
-	@After
+	@AfterEach
 	public void teardown() {
 		this.server = null;
 	}
